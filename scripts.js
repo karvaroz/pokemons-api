@@ -2,7 +2,7 @@ const pokemonContainer = document.querySelector(".pokemon-container");
 const spinner = document.querySelector("#spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
-
+const API_URL = `https://pokeapi.co/api/v2/pokemon/${id}/`;
 
 // Funcionalidad para traer el id del pokemon
 let limit = 8;
@@ -24,7 +24,7 @@ next.addEventListener("click", () => {
 
 // Fecth para Traer el pokemon
 function fetchPokemon(id) {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+  fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
       createPokemon(data);
